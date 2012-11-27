@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'simple_form'
 gem 'devise'
+gem 'soundcloud'
 
 
 # Gems used only for assets and not required

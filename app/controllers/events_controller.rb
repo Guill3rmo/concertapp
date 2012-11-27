@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+before_filter  :only => [:new, :create, :destroy , :edit , :update]
   def index
         @events = Event.all 
         respond_to do |format|

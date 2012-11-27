@@ -2,9 +2,12 @@
 
   <table class = "table table-hover">
       <br>
-       <%= link_to 'add new event', new_event_path %>
+       <% if user_signed_in? %>
+        <%= link_to 'add new event', new_event_path %>
+        <% end %>
      </div>
      <tr>
+       <th>Event Created by:</th>
        <th>Artist</th>
        <th>Time</th>
        <th>Date</th>
@@ -17,14 +20,24 @@
     
    <% @events.each do |event| %>
      <tr>
+      <td><%= event.user.user_name %></td>
        <td><%= event.artist  %></td>
        <td><%= event.time %></td>
        <td><%= event.date %></td>
        <td><%= event.price  %></td>
        <td><%= event.description  %></td>
-       <td><%= link_to 'Details', event %></td>
-       <td><%= link_to 'Edit', edit_event_path(event) %></td>
-       <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?',:method => :delete %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to 'Details', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?',:method => :delete %></td>
+      <% else %>
+        <td></td>
+        <td></td>
+        <td></td>
+      <% end %>
      </tr>
    <% end %>
    </table>
+
+
+ 
