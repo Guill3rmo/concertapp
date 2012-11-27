@@ -1,0 +1,27 @@
+<%= simple_form_for(@event, html: {class: "form-horizontal"}) do |f| %>
+  <% if @event.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited
+        this song from being saved:</h2>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+ 
+    <%= f.input :artist ,:label => 'Who?' %>
+    <%= f.input :time ,:label => 'time?' %>
+    <%= f.input :date ,:label => 'When ?' %>
+    <%= f.input :price ,:label => 'How much?' %>
+    <%= f.input :description, :label => 'What?' %>
+    
+</br>
+
+  
+  
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

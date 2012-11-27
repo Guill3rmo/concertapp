@@ -1,0 +1,35 @@
+<h1>Details</h1>
+
+
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Artist:</b>
+  <%= @event.artist %>
+</p>
+ </br>
+<p>
+  <b>Time of the event:</b>
+  <%= @event.time %>
+</p>
+  </br>
+<p>
+  <b>Date of the event:</b>
+  <%= @event.date %>
+</p>
+ </br>
+<p>
+  <b>Price:</b>
+  <%= @event.price %>
+</p>
+ 
+
+</br>
+<p>
+  <b>Description:</b>
+  <%= @event.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
