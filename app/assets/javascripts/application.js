@@ -8,8 +8,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-
-$(function() {
-        $( "#datepicker" ).datepicker();
-    });
- 
+$('.carousel').carousel({
+  interval: 2000
+})

@@ -1,21 +1,10 @@
 <h1>Details</h1>
-
-
 <p id="notice"><%= notice %></p>
-<% client = Soundcloud.new(:client_id => 'c424d31d2d5919a0f378269cc39b60a7') %>
-<% tracks = client.get('/tracks', :limit => 1, :order => 'hotness') %>
-<%#query = client.get('/tracks', :q => '@uri' ,:limit => 1) %>
-<div class="container">
-       <%tracks.each do |track|%>
-        <h3><%= track.title %></h3>
-        <div>
-        <% track_url = track.permalink_url
-        embed_info = client.get('/oembed', :url => track_url)%>
-        <%=embed_info['html'].html_safe%>
-         
-        <% end %>
-      
-</div>
+
+
+<%= render 'scplayer' %>
+</br>
+</br>
 <p>
   <b>Artist:</b>
   <%= @event.artist %>
@@ -36,25 +25,7 @@
   <%= @event.price %>
 </p>
  
- <div class="span6">
-        
-        <table class = "table table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Title</th>           
-            </tr>
-            </thead>
-             <% i=0 %>
-            <% tracks.each do |track| %>        
-            <tbody>
-            <tr>
-              <td><%= i = i +1 %></td>
-              <td><%=  track.title %></td>               
-            </tr>
-            </tbody>
-            <% end %> 
-          </table>
+ 
 
 </br>
 <p>

@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127200835) do
+ActiveRecord::Schema.define(:version => 20121128041140) do
 
   create_table "events", :force => true do |t|
-    t.date     "date"
     t.string   "time"
     t.string   "artist"
     t.decimal  "price"
@@ -23,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20121127200835) do
     t.datetime "updated_at"
     t.string   "sc_url"
     t.integer  "user_id"
+    t.string   "date"
+    t.string   "artist_name"
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"

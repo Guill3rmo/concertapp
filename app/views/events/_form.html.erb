@@ -1,6 +1,4 @@
 
-<% client = Soundcloud.new(:client_id => '46d7b268e9c076c361f38686deb88471') %>
- 
 
 <%= simple_form_for(@event, html: {class: "form-horizontal"}) do |f| %>
   <% if @event.errors.any? %>
@@ -16,18 +14,20 @@
   <% end %>
   <%=f.hidden_field :user_id, :value => current_user.id %>
  
-    <%= f.input :artist ,:label => 'Who?' %>
+    <%= f.input :artist ,:label => 'Event name / Artist' %>
     <%= f.input :time ,:label => 'time?' %>
-    <%= f.text_field :date, :id => "datepicker" %>
-    
-    <%= f.input :price ,:label => 'How much?' %>
-    <%= f.input :description, :label => 'What?' %>
+   
+    <%= f.input :date, :input_html => { :id => 'datepicker'} %>
+    <%= f.input :price ,:label => 'How much $$$?' %>
+    <%= f.input :description, :label => 'What?' , :input_html => { :class => 'text_area_custom' } %>
+    <%= f.input :artist_name, :label => 'Artist' , :input_html => { :id => 'artist_name' } %>
+    <%= f.input :sc_url, collection: [@event.sc_url], :prompt => "Select the track", input_html: { style: 'width: 100%' , :id => 'sc_url'}   %>
     
  
    
     </script>
+  </br>
   
-  <div class="actions">
     <%= f.button :submit %>
-  </div>
+  
 <% end %>
