@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for(@event, html: {class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@event, html: {class: "form-horizontal"} , html: {:multipart => true } ) do |f| %>
   <% if @event.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@event.errors.count, "error") %> prohibited
@@ -23,6 +23,7 @@
     <%= f.input :artist_name, :label => 'Artist' , :input_html => { :id => 'artist_name' } %>
     <%= f.input :sc_url, collection: [@event.sc_url], :prompt => "Select the track", input_html: { style: 'width: 100%' , :id => 'sc_url'}   %>
     
+    <%= f.file_field :picture %>
  
    
     </script>

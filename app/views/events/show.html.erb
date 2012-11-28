@@ -5,6 +5,9 @@
 <%= render 'scplayer' %>
 </br>
 </br>
+
+
+<%= image_tag @event.picture.url(:medium) %>
 <p>
   <b>Artist:</b>
   <%= @event.artist %>
