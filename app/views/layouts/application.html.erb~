@@ -56,8 +56,7 @@
       <div class="active item"><% image_tag("img1.jpg") %><img src="assets/img1.jpg" alt="Icon"></div> 
       <div class="item"><% image_tag("img1.jpg") %><img src="assets/img1.jpg" alt="Icon"></div> 
       <div class="item"><% image_tag("img2.jpg") %><img src="assets/img2.jpg" alt="Icon"></div>
-      <div class="item"><% image_tag("img3.jpg") %><img src="assets/img3.jpg" alt="Icon"></div>
-      <div class="item"><% image_tag("img4.jpg") %><img src="assets/img4.jpg" alt="Icon"></div>
+    
     </div>
     <!-- Carousel nav -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
