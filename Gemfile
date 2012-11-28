@@ -10,6 +10,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'soundcloud'
 gem "paperclip", "~> 3.0"
+gem 'kaminari'
+ 
 
 
 # Gems used only for assets and not required

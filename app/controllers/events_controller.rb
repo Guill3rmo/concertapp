@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
 before_filter  :only => [:new, :create, :destroy , :edit , :update]
   def index
-        @events = Event.all 
+
+         
+        @events = Event.order(:date).page(params[:page]).per(6)
+       
         respond_to do |format|
             format.html  # index.html.erb
             format.json  { render :json => @events }

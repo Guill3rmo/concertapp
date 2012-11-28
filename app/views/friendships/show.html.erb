@@ -1,0 +1,14 @@
+
+<% user= User.find(@event.user_id)%>
+<h1> my profile <h1>
+ 
+<p>Username: <%= user.user_name%></p>
+ 
+<h2>Your Friends</h2>
+<ul>
+  <% for user in user.friends %>
+  <li><%=  user.user_name %></li>
+  <% end %>  
+</ul>
+
+<%= link_to 'Back', events_path %>

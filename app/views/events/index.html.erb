@@ -1,5 +1,7 @@
 <h1>Available Events/Concerts</h1>
 
+
+ <%=paginate @events%>
   <table class = "table table-hover">
       <br>
        <% if user_signed_in? %>
@@ -7,7 +9,7 @@
         <% end %>
      </div>
      <tr>
-       <th>Created by:</th>
+       <th>By:</th>
        <th>Event</th>
        <th>Time</th>
        <th>Date</th>
@@ -17,11 +19,15 @@
        <th>Edit</th>
        <th>Destroy</th>
      </tr>
-    
+
+
+
+
+      
    <% @events.each do |event| %>
      <tr>
-      <td><%= event.user.user_name %></td>
-       <td><%= event.artist  %><br><%= image_tag event.picture.url(:thumb) %></td>
+      <td><%= event.user.user_name %><br> <%= link_to "follow", friendships_path(:friend_id => event.user), :method => :post %></td>
+       <td><%= event.artist  %><%= image_tag event.picture.url(:thumb) %></td>
        <td><%= event.time %></td>
        <td><%= event.date %></td>
        <td><%= event.price  %></td>
